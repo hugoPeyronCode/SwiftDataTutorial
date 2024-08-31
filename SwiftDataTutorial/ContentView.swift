@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+  @Environment(\.modelContext) var context
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Hello, world!") 
+
+          Button (action: { context.undoManager?.undo() }, label: {
+            Text("Undo")
+          })
+
         }
         .padding()
     }

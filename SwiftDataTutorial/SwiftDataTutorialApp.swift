@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SwiftDataTutorialApp: App {
@@ -13,5 +14,6 @@ struct SwiftDataTutorialApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Lesson.self], isAutosaveEnabled: true, isUndoEnabled: true)
     }
 }
